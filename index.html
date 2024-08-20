@@ -12,81 +12,34 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            overflow-x: hidden;
         }
 
         header {
             background-color: #2c3e50;
             color: #fff;
-            padding: 80px 20px;
+            padding: 50px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 150%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-            animation: slide 10s infinite linear;
-            transform: translateX(-50%);
-        }
-
-        @keyframes slide {
-            0% {
-                transform: translateX(-50%) translateY(-100%);
-            }
-
-            50% {
-                transform: translateX(-50%) translateY(100%);
-            }
-
-            100% {
-                transform: translateX(-50%) translateY(-100%);
-            }
         }
 
         h1 {
-            color: #00d4ff;
             font-size: 2.5rem;
-            animation: fadeIn 2s ease-in-out;
             margin: 0;
         }
 
         p.subtitle {
-            color: #00d4ff;
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin-top: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         nav {
             display: flex;
             justify-content: center;
             background-color: #34495e;
-            padding: 10px 0;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            animation: slideDown 1s ease-in-out;
-            margin: 0;
         }
 
         nav a {
@@ -94,67 +47,26 @@
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
-            position: relative;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #00d4ff;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav a:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
+        nav a:hover {
+            color: #00d4ff;
         }
 
         section {
             padding: 40px 20px;
+            max-width: 900px;
             margin: 20px auto;
-            max-width: 90%;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            animation: zoomIn 0.5s ease-in-out;
         }
 
         h2 {
             color: #2c3e50;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
-            position: relative;
-        }
-
-        h2::before {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: #00d4ff;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            border-radius: 5px;
-        }
-
-        @keyframes zoomIn {
-            0% {
-                transform: scale(0.9);
-                opacity: 0;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
         }
 
         p {
@@ -162,58 +74,53 @@
             margin-bottom: 20px;
         }
 
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 40px;
+        .education-item {
+            margin-bottom: 20px;
         }
 
         .photo-corner {
             display: flex;
             justify-content: center;
             margin: 20px 0;
-            animation: fadeInUp 1s ease-in-out;
         }
 
         .photo-corner img {
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
+            width: 200px;
+            height: 200px;
         }
 
-        .photo-corner img:hover {
-            transform: scale(1.05);
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 40px;
         }
 
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Responsive Design */
+        .whatsapp-button img {
+            width: 50px;
+            height: 50px;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
 
             p.subtitle {
-                font-size: 0.9rem;
-            }
-
-            nav a {
-                margin: 0 10px;
+                font-size: 1rem;
             }
 
             section {
@@ -221,30 +128,25 @@
             }
 
             h2 {
-                font-size: 1.25rem;
+                font-size: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
             header {
-                padding: 60px 15px;
+                padding: 30px 15px;
             }
 
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             p.subtitle {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
 
             nav {
                 flex-direction: column;
-                padding: 10px 0;
-            }
-
-            nav a {
-                margin: 5px 0;
             }
 
             section {
@@ -252,7 +154,7 @@
             }
 
             h2 {
-                font-size: 1.1rem;
+                font-size: 1.25rem;
             }
 
             .photo-corner img {
@@ -280,7 +182,7 @@
 <section id="about">
     <h2>About Me</h2>
     <div class="photo-corner">
-        <img src="photos.jpg" alt="Showkat Ullah Akash" width="200" height="200">
+        <img src="photos.jpg" alt="Showkat Ullah Akash">
     </div>
     <p>Welcome to my personal website. I’m Showkat Ullah Akash, a passionate entrepreneur and business professional based in Netrakona, Dhaka, Bangladesh. With a strong background in management and a commitment to excellence, I strive to bring the best to every project I undertake.</p>
     <p><strong>Location:</strong> Netrakona, Dhaka, Bangladesh</p>
@@ -297,23 +199,21 @@
 
     <h3>Member at Anjuman Mufidul Islam</h3>
     <p><strong>Location:</strong> Netrokona</p>
-    <p><strong>Date:</strong> September 29, 2021 - Present</p>
-    <p>As a member, I actively participate in various social welfare activities to support the community.</p>
+    <p><strong>Date:</strong> Active</p>
+    <p>As a member, I am committed to supporting charitable activities and contributing to social welfare in our community.</p>
+
+    <h3>Owner at Meet Point</h3>
+    <p><strong>Date:</strong> October 5, 2019 - Present</p>
+    <p>As the owner of Meet Point, I have successfully managed the business, ensuring its growth and maintaining its reputation as a local favorite.</p>
 
     <h3>Organizer at Quantum Foundation</h3>
-    <p><strong>Date:</strong> October 5, 2015 - Present</p>
-    <p>At Quantum Foundation, I help promote the values of compassion, meditation, and charity. Our mission is to spread positivity and encourage personal growth through these practices.</p>
+    <p><strong>Location:</strong> Netrokona, Dhaka, Bangladesh</p>
+    <p><strong>Date:</strong> Active</p>
+    <p>In my role at Quantum Foundation, I organize events and activities that promote health, well-being, and social responsibility in our community.</p>
 </section>
 
 <section id="education">
     <h2>Education</h2>
-
-    <div class="education-item">
-        <h3>BBA (Hons) in Management</h3>
-        <p><strong>Institution:</strong> National University, Department of Management</p>
-        <p><strong>Date:</strong> 2022 - Present</p>
-        <p>Currently pursuing a Bachelor's degree in Business Administration with a focus on management. This program equips me with advanced skills in business management and leadership.</p>
-    </div>
 
     <div class="education-item">
         <h3>MBA in Management</h3>
@@ -323,37 +223,42 @@
     </div>
 
     <div class="education-item">
-        <h3>BSc in Physics</h3>
-        <p><strong>Institution:</strong> Netrakona Govt College</p>
+        <h3>BBA (Hons) in Management</h3>
+        <p><strong>Institution:</strong> National University, Department of Management</p>
         <p><strong>Date:</strong> Completed</p>
-        <p>Obtained a Bachelor of Science degree in Physics, which laid the foundation for my analytical and problem-solving skills.</p>
+        <p>Currently pursuing a Bachelor's degree in Business Administration with a focus on management. This program equips me with advanced skills in business management and leadership.</p>
+    </div>
+
+    
+    <div class="education-item">
+        <h3>HSC in Business Studies</h3>
+        <p><strong>Institution:</strong> Netrakona Govt College, Netrakona</p>
+        <p><strong>Date:</strong> Completed</p>
+        <p>Completed Higher Secondary Certificate in Business Studies, focusing on foundational concepts in management, economics, and business principles.</p>
     </div>
 
     <div class="education-item">
-        <h3>HSC in Science</h3>
-        <p><strong>Institution:</strong> Mymensingh College</p>
+        <h3>SSC in Business Studies</h3>
+        <p><strong>Institution:</strong> Anjuman Adarsha Govt. High School, Netrakona</p>
         <p><strong>Date:</strong> Completed</p>
-        <p>Completed Higher Secondary Certificate in Science, focusing on advanced scientific and mathematical concepts.</p>
-    </div>
-
-    <div class="education-item">
-        <h3>SSC in Science</h3>
-        <p><strong>Institution:</strong> Guzirkona High School</p>
-        <p><strong>Date:</strong> Completed</p>
-        <p>Completed Secondary School Certificate in Science, providing a strong foundation in general science and mathematics.</p>
+        <p>Completed Secondary School Certificate in Business Studies, providing a strong foundation in general business principles and commerce.</p>
     </div>
 </section>
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>Feel free to reach out if you have any questions or would like to connect!</p>
+    <p>If you’d like to get in touch, feel free to reach out via email or connect with me on social media.</p>
     
-    <p><strong>Phone:</strong> +8801789335268</p>
+    <p><strong>Phone:</strong> 01789335268</p>
 </section>
 
 <footer class="footer">
-    <p>&copy; 2024 Showkat Ullah Akash. All rights reserved.</p>
+    <p>© 2024 Showkat Ullah Akash. All Rights Reserved.</p>
 </footer>
+
+<a href="https://api.whatsapp.com/send?phone=8801844237610" class="whatsapp-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 </body>
 
